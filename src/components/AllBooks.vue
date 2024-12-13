@@ -47,6 +47,10 @@ export default {
       toastMessage: "",
     };
   },
+  watch: {
+    searchQuery: "filterBooks",
+    searchCategory: "filterBooks",
+  },
   methods: {
     filterBooks() {
       const query = this.searchQuery.toLowerCase();
