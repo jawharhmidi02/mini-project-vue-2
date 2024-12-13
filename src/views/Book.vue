@@ -145,14 +145,16 @@ export default {
         this.showToast("All fields must be filled.");
         return;
       }
-      this.books[this.id] = this.editedBook;
+      this.books = this.books.filter((item) => item.id !== this.id);
+      this.books = [...this.books, this.editedBook];
+
       localStorage.setItem("books", JSON.stringify(this.books));
       this.book = { ...this.editedBook };
       this.isEditing = false;
       this.showToast("Book updated successfully.");
     },
     deleteBook() {
-      this.books.splice(this.id, 1);
+      this.books = this.books.filter((item) => item.id !== this.id);
       localStorage.setItem("books", JSON.stringify(this.books));
       this.confirmDelete = false;
       this.showToast("Book deleted successfully.");
@@ -175,7 +177,7 @@ export default {
     },
   },
   mounted() {
-    this.book = this.books[this.id] || null;
+    this.book = this.books.find((item) => item.id === this.id) || null;
     if (this.book) {
       this.editedBook = { ...this.book };
     }

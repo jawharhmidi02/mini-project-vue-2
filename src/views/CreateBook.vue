@@ -142,6 +142,7 @@ export default {
         date: this.date,
         category: this.category,
         img: this.img,
+        id: Date.now(),
       };
 
       const books = JSON.parse(localStorage.getItem("books")) || [];

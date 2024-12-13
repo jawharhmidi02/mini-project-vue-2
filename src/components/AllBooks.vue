@@ -12,7 +12,7 @@
     </div>
 
     <div class="book-card" v-for="(book, index) in filteredBooks" :key="index">
-      <BookItem :book="book" :id="index" />
+      <BookItem :book="book" :id="book.id" />
     </div>
 
     <div v-if="toastVisible" class="toast">
