@@ -1,5 +1,5 @@
 <template>
-  <transition :name="$route.meta.transition || 'fade'" mode="out-in">
+  <transition :name="$route.meta.transition || 'fade'">
     <router-view />
   </transition>
 </template>

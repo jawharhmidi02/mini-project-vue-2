@@ -47,10 +47,6 @@ export default {
       toastMessage: "",
     };
   },
-  watch: {
-    searchQuery: "filterBooks",
-    searchCategory: "filterBooks",
-  },
   methods: {
     filterBooks() {
       const query = this.searchQuery.toLowerCase();
@@ -116,6 +112,7 @@ export default {
   align-items: center;
   width: 100%;
   height: 100%;
+  min-height: 600px;
   text-align: center;
   color: black;
   text-decoration: none;

@@ -40,11 +40,6 @@ export default {
       searchCategory: "",
     };
   },
-  methods: {
-    searchBooks() {
-      this.$refs.allBooksRef.filterBooks(this.searchQuery, this.searchCategory);
-    },
-  },
 };
 </script>
 
