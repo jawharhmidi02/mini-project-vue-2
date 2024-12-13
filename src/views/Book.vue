@@ -19,10 +19,30 @@
         />
         <div class="book-info">
           <template v-if="!isEditing">
-            <p><strong>Title:</strong> {{ book.title }}</p>
-            <p><strong>Author:</strong> {{ book.author }}</p>
-            <p><strong>Category:</strong> {{ book.category }}</p>
-            <p><strong>Date:</strong> {{ book.date }}</p>
+            <p>
+              <strong style="">Title:</strong> <br />
+              <span style="margin-left: 10px; font-size: 20px">{{
+                book.title
+              }}</span>
+            </p>
+            <p>
+              <strong style="">Author:</strong> <br />
+              <span style="margin-left: 10px; font-size: 20px">{{
+                book.author
+              }}</span>
+            </p>
+            <p>
+              <strong style="">Category:</strong> <br />
+              <span style="margin-left: 10px; font-size: 20px">{{
+                book.category
+              }}</span>
+            </p>
+            <p>
+              <strong style="">Date:</strong> <br />
+              <span style="margin-left: 10px; font-size: 20px">{{
+                book.date
+              }}</span>
+            </p>
           </template>
           <template v-else>
             <input
@@ -208,8 +228,8 @@ export default {
 }
 
 .book-cover {
-  height: 200px;
-  width: 150px;
+  height: 100%;
+  width: 250px;
   object-fit: cover;
   border-radius: 4px;
 }

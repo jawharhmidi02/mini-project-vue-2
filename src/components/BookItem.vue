@@ -1,5 +1,5 @@
 <template>
-  <router-link v-bind:to="'/book/' + id">
+  <router-link v-bind:to="'/book/' + id" class="full-height">
     <div class="book-card">
       <img :src="book.img" alt="Book Cover" class="book-cover" />
       <div class="book-info">
@@ -38,14 +38,15 @@ export default {
 }
 
 .book-cover {
-  width: 100%;
-  height: 300px;
+  width: 300px;
+  height: 450px;
   object-fit: cover;
   border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .book-info {
+  margin-top: auto;
   font-size: 14px;
   line-height: 1.5;
 }

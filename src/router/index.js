@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import CreateBook from "../views/CreateBook.vue";
 import Book from "../views/Book.vue";
+import Error from "../views/Error.vue";
 
 Vue.use(VueRouter);
 
@@ -26,6 +27,12 @@ const router = new VueRouter({
       path: "/book/:id",
       name: "book",
       component: Book,
+      meta: { transition: "fade" },
+    },
+    {
+      path: "/*",
+      name: "error",
+      component: Error,
       meta: { transition: "fade" },
     },
   ],

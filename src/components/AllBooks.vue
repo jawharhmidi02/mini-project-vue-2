@@ -104,7 +104,8 @@ export default {
 }
 
 .book-card {
-  flex: 1;
+  height: 100%;
+  display: flex;
 }
 
 .add-book-card {
