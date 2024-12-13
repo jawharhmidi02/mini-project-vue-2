@@ -55,7 +55,7 @@ export default {
   font-family: "Roboto", sans-serif;
   background-color: #f9f9f9;
   min-height: calc(100dvh - 40px);
-  padding: 20px;
+  padding: 20px 100px;
 }
 
 .navbar {

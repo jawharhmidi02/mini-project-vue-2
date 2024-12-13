@@ -1,13 +1,13 @@
 <template>
-  <router-link v-bind:to="'/book/' + id" class="full-height">
-    <div class="book-card">
+  <router-link v-bind:to="'/book/' + id" class="book-card">
+    <div class="image-container">
       <img :src="book.img" alt="Book Cover" class="book-cover" />
-      <div class="book-info">
-        <p><strong>Title:</strong> {{ book.title }}</p>
-        <p><strong>Author:</strong> {{ book.author }}</p>
-        <p><strong>Category:</strong> {{ book.category }}</p>
-        <p><strong>Date:</strong> {{ book.date }}</p>
-      </div>
+    </div>
+    <div class="book-info">
+      <p><strong>Title:</strong> {{ book.title }}</p>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p><strong>Category:</strong> {{ book.category }}</p>
+      <p><strong>Date:</strong> {{ book.date }}</p>
     </div>
   </router-link>
 </template>
@@ -23,13 +23,30 @@ export default {
 </script>
 
 <style scoped>
+.image-container {
+  overflow: hidden;
+}
+
 .book-card {
   background-color: white;
   border-radius: 8px;
-  padding: 15px;
+  width: calc(100%);
+  height: 100%;
   text-align: left;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  align-self: center;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.book-card img {
+  transition: all 0.4s;
+}
+
+.book-card img:hover {
+  scale: 1.05;
 }
 
 .book-card:hover {
@@ -38,15 +55,17 @@ export default {
 }
 
 .book-cover {
-  width: 300px;
+  width: 100%;
   height: 450px;
+  margin: auto;
   object-fit: cover;
   border-radius: 4px;
-  margin-bottom: 10px;
 }
 
 .book-info {
-  margin-top: auto;
+  padding: 14px;
+  /* margin-top: auto; */
+  margin-bottom: auto;
   font-size: 14px;
   line-height: 1.5;
 }

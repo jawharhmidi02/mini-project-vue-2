@@ -11,9 +11,13 @@
       <p>No results found for your search.</p>
     </div>
 
-    <div class="book-card" v-for="(book, index) in filteredBooks" :key="index">
-      <BookItem :book="book" :id="book.id" />
-    </div>
+    <BookItem
+      class="book-card"
+      v-for="(book, index) in filteredBooks"
+      :key="index"
+      :book="book"
+      :id="book.id"
+    />
 
     <div v-if="toastVisible" class="toast">
       <p>{{ toastMessage }}</p>
@@ -76,10 +80,11 @@ export default {
 <style scoped>
 .all-books {
   display: grid;
-  gap: 20px;
+  gap: 25px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   grid-auto-columns: minmax(0, 1fr);
   grid-auto-rows: minmax(0, 1fr);
+  /* place-items: center; */
   margin-top: 20px;
 }
 
@@ -103,21 +108,14 @@ export default {
   font-size: 14px;
 }
 
-.book-card {
-  height: 100%;
-  display: flex;
-}
-
 .add-book-card {
   background: #e0e0e0;
   border-radius: 8px;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* width: 250px; */
-  /* height: 100%; */
-  min-height: 450px;
-  min-width: 350px;
+  width: 100%;
+  height: 100%;
   text-align: center;
   color: black;
   text-decoration: none;
